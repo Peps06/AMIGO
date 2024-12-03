@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathKids - Aprende matemáticas jugando</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --accent-color: #FFC107;
+            --success-color: #8BC34A;
+            --background-color: #F5F7FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: white;
+            margin: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 20px;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 60%;
+            height: 100%;
+            background-color: var(--success-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-content {
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .section-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-icon {
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .rewards-section {
+            background-color: white;
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .reward-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .reward-icon {
+            font-size: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        .daily-challenges {
+            background-color: white;
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .challenge-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .challenge-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #1976D2;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>🎮 A.M.I.G.O.</h1>
+        <p>¡Aprende matemáticas jugando!</p>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-info">
+            <div class="avatar">😊</div>
+            <div>
+                <h3>¡Hola, Jugador!</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <small>Nivel 5 - 600 puntos</small>
+            </div>
+        </div>
+        <button class="button">Editar Perfil</button>
+    </section>
+
+    <main class="main-content">
+        <div class="section-card" onclick="location.href='#juegos'">
+            <div class="section-icon">🎲</div>
+            <h2>Juegos</h2>
+            <p>¡Practica matemáticas con juegos divertidos!</p>
+        </div>
+
+        <div class="section-card" onclick="location.href='#practica'">
+            <div class="section-icon">✏️</div>
+            <h2>Práctica</h2>
+            <p>Ejercicios personalizados para ti</p>
+        </div>
+
+        <div class="section-card" onclick="location.href='#logros'">
+            <div class="section-icon">🏆</div>
+            <h2>Logros</h2>
+            <p>¡Mira todo lo que has conseguido!</p>
+        </div>
+    </main>
+
+    <section class="daily-challenges">
+        <h2>🎯 Retos Diarios</h2>
+        <div class="challenge-list">
+            <div class="challenge-item">
+                <div>
+                    <h3>Suma Veloz</h3>
+                    <p>Resuelve 10 sumas en menos de 2 minutos</p>
+                </div>
+                <button class="button">¡Jugar!</button>
+            </div>
+            <div class="challenge-item">
+                <div>
+                    <h3>Multiplicación Mágica</h3>
+                    <p>Completa la tabla del 7</p>
+                </div>
+                <button class="button">¡Jugar!</button>
+            </div>
+            <div class="challenge-item">
+                <div>
+                    <h3>División Divertida</h3>
+                    <p>Resuelve 5 divisiones sin errores</p>
+                </div>
+                <button class="button">¡Jugar!</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="rewards-section">
+        <h2>🌟 Tus Recompensas</h2>
+        <div class="rewards-grid">
+            <div class="reward-item">
+                <div class="reward-icon">🎨</div>
+                <p>Nuevo tema</p>
+            </div>
+            <div class="reward-item">
+                <div class="reward-icon">🎵</div>
+                <p>Música nueva</p>
+            </div>
+            <div class="reward-item">
+                <div class="reward-icon">🎮</div>
+                <p>Nuevo juego</p>
+            </div>
+            <div class="reward-item">
+                <div class="reward-icon">👑</div>
+                <p>Corona especial</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Aquí iría la lógica de la aplicación
+        // Por ejemplo, actualizar la barra de progreso, manejar los retos diarios, etc.
+        
+        // Ejemplo de actualización de progreso
+        function updateProgress(value) {
+            const progressBar = document.querySelector('.progress-fill');
+            progressBar.style.width = `${value}%`;
+        }
+
+        // Ejemplo de sistema de recompensas
+        function unlockReward(rewardId) {
+            // Lógica para desbloquear recompensas
+            console.log(`Recompensa ${rewardId} desbloqueada`);
+        }
+
+        // Ejemplo de sistema de retos
+        function startChallenge(challengeId) {
+            // Lógica para iniciar retos
+            console.log(`Iniciando reto ${challengeId}`);
+        }
+    </script>
+</body>
+</html>
